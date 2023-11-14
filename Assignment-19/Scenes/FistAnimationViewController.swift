@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  FistAnimationViewController.swift
 //  Assignment-19
 //
 //  Created by Eka Kelenjeridze on 12.11.23.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class BounceAnimationViewController: UIViewController {
+final class FistAnimationViewController: UIViewController {
     // MARK: - Properties
     private let TBCLabel: UILabel = {
         let label = UILabel()
@@ -25,9 +25,9 @@ final class BounceAnimationViewController: UIViewController {
         
         setupBackground()
         setupLabel()
-        
         animateBounce(for: TBCLabel)
         animateFade(for: TBCLabel)
+        setupScreenTapGesture()
     }
     
     // MARK: - Private Methods
@@ -66,6 +66,15 @@ final class BounceAnimationViewController: UIViewController {
                 self.animateFade(for: label)
             }
         }
+    }
+    
+    private func setupScreenTapGesture() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(navigateToSecondAnimation))
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc private func navigateToSecondAnimation() {
+        navigationController?.pushViewController(SecondAnimationViewController(), animated: true)
     }
 }
 

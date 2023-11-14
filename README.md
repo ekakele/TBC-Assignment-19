@@ -7,5 +7,6 @@ The assignment is designed to introduce UIView Animations by means of altering t
 
 The assignment covers the following topics: 
 * UIView Animations
+* CABasicAnimation
 
 > The deadline of this task is: 13/11/2023, 10:00. 
